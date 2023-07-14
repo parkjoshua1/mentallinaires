@@ -5,18 +5,23 @@
     <title>Mentallinaire</title>
     <style>
         /* CSS styles go here */
+        html {
+            background-color: #FAF0D7;
+            color: black;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Lilita One', cursive;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background-color: #FFD9C0;
+            color: #333;
+            padding: 50px;
             text-align: center;
+            font-weight: bold;
         }
 
         nav {
@@ -43,6 +48,16 @@
             border-radius: 4px;
         }
 
+        :active #home {
+            background-color: #333;
+            color: white;
+        }
+
+        a:hover {
+            background-color: #333;
+            color: white;
+        }
+
         main {
             margin: 20px;
         }
@@ -66,16 +81,21 @@
         }
 
         .video-container {
-            display: inline-block;
-            margin-right: 20px;
-            vertical-align: top;
-            width: 320px;
-            height: 180px;
+            width: 30%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
         }
 
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
+        div.container {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .video {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 80%;
         }
 
         .podcast-container {
@@ -115,6 +135,11 @@
         .blog {
             margin-bottom: 10px;
         }
+
+        section a {
+            text-decoration: none;
+            color: #8CC0DE;
+        }
     </style>
 </head>
 
@@ -128,23 +153,36 @@
             <li><a href="#user-history">User History</a></li>
             <li><a href="#subscribed-content">Subscribed Content</a></li>
             <li><a href="donate.html" target="_blank">Donate</a></li>
-            <li><a href="index.html">Return Home</a></li>
+            <li><a href="index.html" id="home">Return Home</a></li>
+            <li><a href="anxiety.html">Anxiety</a></li>
+            <li><a href="stress.html">Stress</a></li>
+            <li><a href="pDD.html">Persistent Depressive Disorder</a></li>
         </ul>
     </nav>
 
     <main>
-        <section>
+        <section class="recommended-section">
             <h2 class="section-title">Recommended for You</h2>
 
             <section class="section">
                 <h3 class="section-title">Videos</h3>
 
-                <div class="video-container" id="video1">
-                    <iframe src="https://www.youtube.com/embed/NHWepkHWd0U" frameborder="0" allowfullscreen></iframe>
-                </div>
+                <div class="video">
+                    <div class="video-container" id="video1">
+                        <a href="https://www.youtube.com/watch?v=XiCrniLQGYc"><img src="who.jpg"
+                                alt="black dog thumbnail" width="100%"></a>
+                        <div class="container">
+                            <p>I had a black dog, his name was depression</p>
+                        </div>
+                    </div>
 
-                <div class="video-container" id="video2">
-                    <iframe src="https://www.youtube.com/embed/Q0rYH7kWdLw" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-container" id="video2">
+                        <a href="https://www.youtube.com/watch?v=3nwwKbM_vJc"><img src="google.jpg"
+                                alt="white professor thumbnail" width="100%"></a>
+                        <div class="container">
+                            <p>Mindfulness with Jon Kabat-Zinn</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -152,14 +190,19 @@
                 <h3 class="section-title">Podcasts</h3>
 
                 <div class="podcast-container">
-                    <div class="podcast" id="podcast1">
-                        <img src="podcast1.jpg" alt="Podcast 1">
-                        <p>Podcast 1 description</p>
+                    <div class="podcast" id="pd1">
+                        <img src="TAGP.jpeg" alt="Podcast 1">
+                        <p><a
+                                href="https://podcasts.google.com/feed/aHR0cDovL2FueGlldHlndXlwb2RjYXN0LmxpYnN5bi5jb20vcnNz/episode/aHR0cDovL2FueGlldHlleGl0LmNvbS8_cD05MDEy?sa=X&ved=0CAUQkfYCahgKEwjIw8nK-IyAAxUAAAAAHQAAAAAQ0zE">TAGP
+                                02: How Is Anxiety Affecting The Main Aspects Of Your Life?
+                            </a></p>
                     </div>
 
-                    <div class="podcast" id="podcast2">
-                        <img src="podcast2.jpg" alt="Podcast 2">
-                        <p>Podcast 2 description</p>
+                    <div class="podcast" id="pd2">
+                        <img src="THSHPwDtP.jpeg" alt="podcast 2">
+                        <p><a
+                                href="https://podcasts.google.com/feed/aHR0cHM6Ly9oYXJkY29yZXNlbGZoZWxwLmxpYnN5bi5jb20vcnNz/episode/YTA1YmMxZWItMTZjYi00NzY0LThmN2MtMzdjZDViZTk1MjM2?sa=X&ved=0CAUQkfYCahgKEwjIw8nK-IyAAxUAAAAAHQAAAAAQuxQ">Episode
+                                260: Loss of Appetite with Anxiety & Battling with a Negative Body Image</a></p>
                     </div>
                 </div>
             </section>
@@ -204,33 +247,79 @@
             </section>
         </section>
 
-        <a href="anxiety.html">Anxiety</a>
-        <a href="stress.html">Stress</a>
-        <a href="pDD.html">Persistent Depressive Disorder</a>
     </main>
 
     <footer>
         &copy; 2023 Mentallinaire. All rights reserved.
     </footer>
+
+
+    <script>
+        // Function to randomly select a content item from the "Recommended for You" section
+        function getRandomContent() {
+            // Get the content items in the "Recommended for You" section
+            const recommendedSection = document.querySelector('.recommended-section');
+            const contentItems = recommendedSection.querySelectorAll('.section > *');
+
+            // Generate an array of random indices
+            const randomIndices = [];
+            while (randomIndices.length < 2) {
+                const randomIndex = Math.floor(Math.random() * contentItems.length);
+                if (!randomIndices.includes(randomIndex)) {
+                    randomIndices.push(randomIndex);
+                }
+            }
+
+            // Create a document fragment to hold the new content
+            const fragment = document.createDocumentFragment();
+
+            // Loop through the random indices and clone the content items
+            randomIndices.forEach((index) => {
+                const randomContentItem = contentItems[index].cloneNode(true);
+                fragment.appendChild(randomContentItem);
+            });
+
+            // Clear the existing content in the "Recommended for You" section
+            while (recommendedSection.firstChild) {
+                recommendedSection.firstChild.remove();
+            }
+
+            // Append the new content to the "Recommended for You" section
+            recommendedSection.appendChild(fragment);
+
+            // Log the IDs of the selected content for testing purposes
+            randomIndices.forEach((index) => {
+                const randomContentItem = contentItems[index];
+                console.log('Random Content:', randomContentItem.id);
+            });
+        }
+
+        // Check if there is selected stress content stored in localStorage
+        const selectedStressContent = localStorage.getItem('selectedStressContent');
+        if (selectedStressContent) {
+            // Call the getRandomContent function to simulate changing the content
+            getRandomContent();
+            // Clear the selected stress content from localStorage
+            localStorage.removeItem('selectedStressContent');
+        }
+
+        const selectedPDDContent = localStorage.getItem('selectedPDDContent');
+        if (selectedPDDContent) {
+            // Call the getRandomContent function to simulate changing the content
+            getRandomContent();
+            // Clear the selected stress content from localStorage
+           localStorage.removeItem('selectedPDDContent');
+        }
+
+        const selectedAnxietyContent = localStorage.getItem('selectedAnxietyContent');
+        if (selectedAnxietyContent) {
+            // Call the getRandomContent function to simulate changing the content
+            getRandomContent();
+            // Clear the selected stress content from localStorage
+            localStorage.removeItem('selectedAnxietyContent');
+        }
+    </script>
+
 </body>
-
-
-<script>
-    // Function to randomly select a content item from the "Recommended for Anxiety" section
-    function getRandomContent() {
-        // Get the content items in the "Recommended for Anxiety" section
-        const anxietySection = document.querySelector('.section');
-        const contentItems = anxietySection.children;
-
-        // Generate a random index
-        const randomIndex = Math.floor(Math.random() * contentItems.length);
-
-        // Get the randomly selected content item
-        const randomContentItem = contentItems[randomIndex];
-
-        // Simulate opening the content in a new page or performing some action
-        console.log('Random Content:', randomContentItem.id);
-    }
-</script>
 
 </html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Mentallinaire - Stress Resources</title>
+    <style>
+        /* CSS styles go here */
+        html {
+            background-color: #FAF0D7;
+            color: black;
+        }
+
+        body {
+            font-family: 'Lilita One', cursive;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #FFD9C0;
+            color: #333;
+            padding: 50px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        nav {
+            background-color: #f1f1f1;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            padding: 5px 10px;
+            border: 1px solid #333;
+            border-radius: 4px;
+        }
+
+        :active #home {
+            background-color: #333;
+            color: white;
+        }
+
+        a:hover {
+            background-color: #333;
+            color: white;
+        }
+
+        main {
+            margin: 20px;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .section-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .video-container {
+            width: 30%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
+        }
+
+        div.container {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .video {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .podcast-container {
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+
+        .podcast {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .podcast img {
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+
+        .news-container {
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+
+        .news {
+            margin-bottom: 10px;
+        }
+
+        .blog-container {
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: top;
+        }
+
+        .blog {
+            margin-bottom: 10px;
+        }
+
+        section a {
+            text-decoration: none;
+            color: #8CC0DE;
+        }
+    </style>
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>All Your Resources for Anxeity</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#user-history">User History</a></li>
+            <li><a href="#subscribed-content">Subscribed Content</a></li>
+            <li><a href="donate.html" target="_blank">Donate</a></li>
+            <li><a href="index.html">Return Home</a></li>
+            <li><a href="anxiety.html">Anxiety</a></li>
+            <li><a href="stress.html">Stress</a></li>
+            <li><a href="pDD.html">Persistent Depressive Disorder</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section>
+            <h2 class="section-title">Anxiety</h2>
+
+            <section class="section">
+                <h3 class="section-title">Videos</h3>
+
+                <div class="video">
+                    <div class="video-container" id="video1" onclick="selectAnxietyContent('video1')">
+                        <a href="https://www.youtube.com/watch?v=BVJkf8IuRjE"><img src="what is anxiety.jpeg"
+                                alt="picture of anxious man" width="100%"></a>
+                        <div class="container">
+                            <p>What is Anxiety?</p>
+                        </div>
+                    </div>
+
+                    <div class="video-container" id="video2" onclick="selectAnxietyContent('video2')">
+                        <a href="https://www.youtube.com/watch?v=ZidGozDhOjg"><img src="how to stop feeling anxious.jpg"
+                                alt="man giving a TED" width="100%"></a>
+                        <div class="container">
+                            <p>How to stop feeling anxious about anxiety</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Podcasts</h3>
+
+                <div class="podcast-container">
+                    <div class="podcast" id="pd1" onclick="selectAnxietyContent('pd1')">
+                        <img src="TAGP.jpeg" alt="Podcast 1">
+                        <p><a
+                                href="https://podcasts.google.com/feed/aHR0cDovL2FueGlldHlndXlwb2RjYXN0LmxpYnN5bi5jb20vcnNz/episode/aHR0cDovL2FueGlldHlleGl0LmNvbS8_cD05MDEy?sa=X&ved=0CAUQkfYCahgKEwjIw8nK-IyAAxUAAAAAHQAAAAAQ0zE">TAGP
+                                02: How Is Anxiety Affecting The Main Aspects Of Your Life?
+                            </a></p>
+                    </div>
+
+                    <div class="podcast" id="pd2" onclick="selectAnxietyContent('pd2')">
+                        <img src="THSHPwDtP.jpeg" alt="podcast 2">
+                        <p><a
+                                href="https://podcasts.google.com/feed/aHR0cHM6Ly9oYXJkY29yZXNlbGZoZWxwLmxpYnN5bi5jb20vcnNz/episode/YTA1YmMxZWItMTZjYi00NzY0LThmN2MtMzdjZDViZTk1MjM2?sa=X&ved=0CAUQkfYCahgKEwjIw8nK-IyAAxUAAAAAHQAAAAAQuxQ">Episode
+                                260: Loss of Appetite with Anxiety & Battling with a Negative Body Image</a></p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Recent News</h3>
+
+                <div class="news-container">
+                    <div class="news" id="news1" onclick="selectAnxietyContent('news1')">
+                        <h4><a href="https://www.example.com/news1" target="_blank">Understanding Stress and its Effects
+                                on Mental Health</a></h4>
+                        <p>News article discussing the impact of stress on mental health and strategies to manage stress
+                            effectively.</p>
+                    </div>
+
+                    <div class="news" id="news2" onclick="selectAnxietyContent('news2')">
+                        <h4><a href="https://www.example.com/news2" target="_blank">Stress Management Techniques for a
+                                Healthy Mind and Body</a></h4>
+                        <p>A comprehensive guide on various stress management techniques and their benefits for overall
+                            well-being.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h3 class="section-title">Blogs</h3>
+
+                <div class="blog-container">
+                    <div class="blog" id="blog1" onclick="selectAnxietyContent('blog1')">
+                        <h4><a href="https://www.example.com/blog1" target="_blank">Finding Inner Peace: Mindfulness
+                                Practices for Stress Reduction</a></h4>
+                        <p>A blog post exploring mindfulness practices that can help reduce stress and promote inner
+                            peace.</p>
+                    </div>
+
+                    <div class="blog" id="blog2" onclick="selectAnxietyContent('blog2')">
+                        <h4><a href="https://www.example.com/blog2" target="_blank">Coping with Work-Related Stress:
+                                Strategies and Tips</a></h4>
+                        <p>Insights and coping strategies to manage work-related stress effectively and maintain a
+                            healthy work-life balance.</p>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; 2023 Mentallinaire. All rights reserved.
+    </footer>
+
+    <script>
+        function selectAnxietyContent(contentId) {
+            // Save the selected stress content in localStorage
+            localStorage.setItem('selectedAnxietyContent', contentId);
+        }
+    </script>
+</body>
+
+</html>

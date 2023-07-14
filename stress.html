@@ -5,18 +5,23 @@
     <title>Mentallinaire - Stress Resources</title>
     <style>
         /* CSS styles go here */
+        html {
+            background-color: #FAF0D7;
+            color: black;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
+            font-family: 'Lilita One', cursive;
             margin: 0;
             padding: 0;
         }
 
         header {
-            background-color: #333;
-            color: #fff;
-            padding: 20px;
+            background-color: #FFD9C0;
+            color: #333;
+            padding: 50px;
             text-align: center;
+            font-weight: bold;
         }
 
         nav {
@@ -43,6 +48,16 @@
             border-radius: 4px;
         }
 
+        :active #home {
+            background-color: #333;
+            color: white;
+        }
+
+        a:hover {
+            background-color: #333;
+            color: white;
+        }
+
         main {
             margin: 20px;
         }
@@ -66,16 +81,21 @@
         }
 
         .video-container {
-            display: inline-block;
-            margin-right: 20px;
-            vertical-align: top;
-            width: 320px;
-            height: 180px;
+            width: 30%;
+            background-color: white;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            margin-bottom: 25px;
         }
 
-        .video-container iframe {
-            width: 100%;
-            height: 100%;
+        div.container {
+            text-align: center;
+            padding: 10px 20px;
+        }
+
+        .video {
+            display: inline-flex;
+            justify-content: space-between;
+            width: 80%;
         }
 
         .podcast-container {
@@ -115,6 +135,12 @@
         .blog {
             margin-bottom: 10px;
         }
+
+        section a {
+            text-decoration: none;
+            color: #8CC0DE;
+        }
+    </style>
     </style>
 </head>
 
@@ -129,6 +155,9 @@
             <li><a href="#subscribed-content">Subscribed Content</a></li>
             <li><a href="donate.html" target="_blank">Donate</a></li>
             <li><a href="index.html">Return Home</a></li>
+            <li><a href="anxiety.html">Anxiety</a></li>
+            <li><a href="stress.html">Stress</a></li>
+            <li><a href="pDD.html">Persistent Depressive Disorder</a></li>
         </ul>
     </nav>
 
@@ -139,12 +168,24 @@
             <section class="section">
                 <h3 class="section-title">Videos</h3>
 
-                <div class="video-container" onclick="getRandomContent()">
-                    <iframe src="https://www.youtube.com/embed/VIDEO1" frameborder="0" allowfullscreen></iframe>
-                </div>
+                <div class="video">
+                    <div class="video-container" id="video1" onclick="selectStressContent('video1')">
+                        <a href="https://www.ted.com/talks/kelly_mcgonigal_how_to_make_stress_your_friend"><img
+                                src="how to make stress your friend.jpeg" alt="some woman pointing in TED"
+                                width="100%"></a>
+                        <div class="container">
+                            <p>How to make stress your friend</p>
+                        </div>
+                    </div>
 
-                <div class="video-container" onclick="getRandomContent()">
-                    <iframe src="https://www.youtube.com/embed/VIDEO2" frameborder="0" allowfullscreen></iframe>
+                    <div class="video-container" id="video2" onclick="selectStressContent('video2')">
+                        <a href="https://www.ted.com/talks/brene_brown_the_power_of_vulnerability"><img
+                                src="power of vulnerability.jpeg" alt="another white woman making gestures"
+                                width="100%"></a>
+                        <div class="container">
+                            <p>The power of vulnerability</p>
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -152,14 +193,18 @@
                 <h3 class="section-title">Podcasts</h3>
 
                 <div class="podcast-container">
-                    <div class="podcast" onclick="getRandomContent()">
-                        <img src="podcast1.jpg" alt="Podcast 1">
-                        <p>Podcast 1 description</p>
+                    <div class="podcast" id="pd1" onclick="selectStressContent('pd1')">
+                        <img src="tsls.jpeg" alt="Podcast 1">
+                        <p><a
+                                href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbmNob3IuZm0vcy8xMjc3MWMzYy9wb2RjYXN0L3Jzcw/episode/MTdlZjE1M2UtNzk4Yy00NTM2LTliZmQtM2Q0M2Q5Njc2NDFm?sa=X&ved=0CAUQkfYCahgKEwjIw8nK-IyAAxUAAAAAHQAAAAAQ0Do">How
+                            to Let Go of Coping Mechanisms That Don’t Serve You</a></p>
                     </div>
 
-                    <div class="podcast" onclick="getRandomContent()">
-                        <img src="podcast2.jpg" alt="Podcast 2">
-                        <p>Podcast 2 description</p>
+                    <div class="podcast" id="pd2" onclick="selectStressContent('pd2')">
+                        <img src="tacp.jpeg" alt="Podcast 2">
+                        <p><a
+                                href="https://podcasts.google.com/feed/aHR0cHM6Ly9hbnhpZXR5Y29hY2hlcy5saWJzeW4uY29tL2FueGlldHljb2FjaGVz/episode/ZjkxOTA1ODYtMTgyYy0xMWVlLTg3OTUtOTc4Yzc3ZmFmMjBk?sa=X&ved=0CAUQkfYCahgKEwjIw8nK-IyAAxUAAAAAHQAAAAAQ7Ds">939:
+                            Flying with Confidence: Practical Steps to Overcome Your Fear</a></p>
                     </div>
                 </div>
             </section>
@@ -168,14 +213,14 @@
                 <h3 class="section-title">Recent News</h3>
 
                 <div class="news-container">
-                    <div class="news" onclick="getRandomContent()">
+                    <div class="news" id="news1" onclick="selectStressContent('news1')">
                         <h4><a href="https://www.example.com/news1" target="_blank">Understanding Stress and its Effects
                                 on Mental Health</a></h4>
                         <p>News article discussing the impact of stress on mental health and strategies to manage stress
                             effectively.</p>
                     </div>
 
-                    <div class="news" onclick="getRandomContent()">
+                    <div class="news" id="news2" onclick="selectStressContent('news2')">
                         <h4><a href="https://www.example.com/news2" target="_blank">Stress Management Techniques for a
                                 Healthy Mind and Body</a></h4>
                         <p>A comprehensive guide on various stress management techniques and their benefits for overall
@@ -188,14 +233,14 @@
                 <h3 class="section-title">Blogs</h3>
 
                 <div class="blog-container">
-                    <div class="blog" onclick="getRandomContent()">
+                    <div class="blog" id="blog1" onclick="selectStressContent('blog1')">
                         <h4><a href="https://www.example.com/blog1" target="_blank">Finding Inner Peace: Mindfulness
                                 Practices for Stress Reduction</a></h4>
                         <p>A blog post exploring mindfulness practices that can help reduce stress and promote inner
                             peace.</p>
                     </div>
 
-                    <div class="blog" onclick="getRandomContent()">
+                    <div class="blog" id="blog2" onclick="selectStressContent('blog2')">
                         <h4><a href="https://www.example.com/blog2" target="_blank">Coping with Work-Related Stress:
                                 Strategies and Tips</a></h4>
                         <p>Insights and coping strategies to manage work-related stress effectively and maintain a
@@ -205,34 +250,19 @@
             </section>
         </section>
 
-        <a href="anxiety.html">Anxiety</a>
-        <a href="stress.html">Stress</a>
-        <a href="pDD.html">Persistent Depressive Disorder</a>
     </main>
 
     <footer>
         &copy; 2023 Mentallinaire. All rights reserved.
     </footer>
+
+
+    <script>
+        function selectStressContent(contentId) {
+            // Save the selected stress content in localStorage
+            localStorage.setItem('selectedStressContent', contentId);
+        }
+    </script>
 </body>
-
-<script>
-    // Function to handle the onclick event
-    function getRandomContent() {
-        // Get the "Recommended for Anxiety" section in the parent window
-        const anxietySection = window.opener.document.querySelector('.section');
-
-        // Get the content items in the "Recommended for Anxiety" section
-        const contentItems = stressSection.children;
-
-        // Generate a random index
-        const randomIndex = Math.floor(Math.random() * contentItems.length);
-
-        // Get the randomly selected content item
-        const randomContentItem = contentItems[randomIndex];
-
-        // Simulate opening the content or performing some action
-        console.log('Random Content:', randomContentItem.id);
-    }
-</script>
 
 </html>
